@@ -2,10 +2,7 @@ import { Server as SocketIOServer } from "socket.io";
 import OpenAI from "openai";
 import { convertTextToTTS } from "./tts.mjs";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // Use the API key from the .env file
-});
-
+const apiKey = "your-api-key";
 
 const convertObjectToString = (jsonObject) => {
   const convert = (obj) => {
