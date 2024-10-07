@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
 import http from 'http';
@@ -6,6 +7,7 @@ import { dirname } from 'path';
 import requestHandler, { handleSocket } from './requestHandler.mjs';
 
 const app = express();
+dotenv.config(); 
 const server = http.createServer(app);
 const port = 3000;
 
