@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  </head>
+  <body>
+    <div class="desktop">
+      <div class="div">
+        <div class="pipeline">
+          <div class="overlap-group">
+            <img id="lineExchange3" class="line" src="img/line-5.png" />
+            <img class="img" src="img/line-6.png" />
+            <img id="lineExchange2" class="line-2" src="img/line-4.png" />
+            <img id="lineExchange1" class="line-3" src="img/line-3.png" />
+            <img id="lineExchange5" class="line-4" src="img/line-2.png" />
+            <img id="lineExchange4" class="line-5" src="img/line-1.png" />
+            <button id="processorButton" class="processor-button">
+              <div class="processor">Processor</div>
+            </button>
+            <img class="user" src="img/user.png" />
+
+            <div id="processor1" class="internalData">
+              <img
+                id="internalExchange"
+                class="dataimg"
+                src="img/dataimg-2-1.png"
+              />
+              <div class="text-wrapper">Internal<br />data</div>
+            </div>
+            <div id="processor2" class="manualInformation">
+              <img
+                id="manualExchange"
+                class="dataimg"
+                src="img/dataimg-1-1.png"
+              />
+              <div class="text-wrapper-2">Manual<br />information</div>
+            </div>
+
+            <div id="processor3" class="externalData">
+              <img
+                id="externalExchange"
+                class="dataimg"
+                src="img/dataimg-2-1.png"
+              />
+              <div class="external-data-2">External<br />data</div>
+            </div>
+
+            <div class="domainInformation">
+              <img
+                id="domainExchange"
+                class="dataimg"
+                src="img/dataimg-2-1.png"
+              />
+              <div class="text-wrapper-2">Domain<br />information</div>
+            </div>
+            <div class="ellipse"></div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-4"></div>
+
+            <div class="module-button">
+              <button id="moduleButton" class="ellipse-5"></button>
+              <div class="LLM-module">LLM<br />module</div>
+            </div>
+
+            <div class="ellipse-6"></div>
+            <div class="ellipse-7"></div>
+            <img class="arrow" src="img/arrow-62.png" />
+            <div class="ellipse-8"></div>
+            <div class="ellipse-9"></div>
+            <div class="ellipse-10"></div>
+            <div class="ellipse-11"></div>
+            <img class="line-6" src="img/line6-1.png" />
+            <img class="arrow-2" src="img/arrow62-1.png" />
+
+            <button id="personaSettingButton" class="persona-setting-wrapper">
+              <div class="persona-setting">Persona<br />setting</div>
+            </button>
+          </div>
+        </div>
+
+        <div class="textBox">
+          <form id="textForm">
+            <div class="overlap">
+              <textarea
+                id="responseText"
+                class="TB-rectangle"
+                readonly
+              ></textarea>
+              <div class="text-container">
+                <button id="playButton" class="play-button">Play</button>
+              </div>
+              <img class="TB-line" src="img/tbline-4.svg" />
+              <div class="TB-ellipse-black"></div>
+              <div class="TB-ellipse-white"></div>
+            </div>
+            <div class="overlap-2">
+              <textarea id="textInput1" class="TB-rectangle-4"></textarea>
+              <div class="processorVisible">
+                <textarea id="textInput2" class="TB-rectangle-3"></textarea>
+              </div>
+              <textarea id="textInput3" class="TB-rectangle-2"></textarea>
+              <img class="TB-line-2" src="img/tbline-3.svg" />
+              <img class="TB-line-3 processorVisible" src="img/tbline-2.svg" />
+              <img class="TB-line-4" src="img/tbline-1.svg" />
+              <button id="submitButton" class="submit-button">
+                <img class="button-polygon" src="img/buttonpolygon.png" />
+              </button>
+              <div class="TB-ellipse"></div>
+              <div class="processorVisible TB-ellipse-2"></div>
+              <div class="TB-ellipse-3"></div>
+            </div>
+          </form>
+        </div>
+        <div class="button-container">
+          <button id="openModal" class="additional-button">Manual</button>
+          <button class="additional-button">Domain</button>
+          <button class="additional-button">S1_internal</button>
+          <button class="additional-button">S1_external</button>
+          <button class="additional-button">S2_internal</button>
+          <button class="additional-button">S2_external</button>
+          <button class="additional-button">S3_internal</button>
+          <button class="additional-button">S3_external</button>
+          <button class="additional-button">S4_internal</button>
+          <button class="additional-button">S4_external</button>
+        </div>
+        <div id="additionalTextBoxesModal" class="modal">
+          <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <div class="overlap-3">
+              <div class="text-box-container">
+                <label id="modalLabel" for="textInput4"
+                  >Manual Information</label
+                >
+                <textarea id="textInput4" class="TB-rectangle-4"></textarea>
+                <button class="copy-button" onclick="copyText('textInput4')">
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+
+    <div id="personaModal" class="modal">
+      <div class="modal-content">
+        <span id="closePersonaModal" class="close">&times;</span>
+        <h2 id="personaInstruction">Set the persona of Blabu.</h2>
+        <button id="persona0Button" class="additional-persona">
+          default persona
+        </button>
+        <button id="persona1Button" class="additional-persona">
+          persona_1
+        </button>
+        <button id="persona2Button" class="additional-persona">
+          persona_2
+        </button>
+        <textarea id="personaInput" class="modal-textarea"></textarea>
+        </textarea>
+        <button id="personaSubmit" class="modal-submit">SEND</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const persona0Button = document.getElementById("persona0Button");
+        const persona1Button = document.getElementById("persona1Button");
+        const persona2Button = document.getElementById("persona2Button");
+        const personaInput = document.getElementById("personaInput");
+
+        const persona0Text =
+          "('나이':'30대 초반')/('성격':'친절하고 정중함, 지식이 풍부함, 언제나 긍정적이고 격려함, 공감 능력이 뛰어나며 사용자의 감정을 이해하고 배려함')/('특징':'상냥하고 차분한 말투, 질문에 명확하고 간결하게 대답함, 유머러스한 코멘트 삽입, 항상 사용자의 요청에 신속히 반응함')";
+        const persona1Text =
+          "('나이':'20대 후반')/('성격':'밝고 활발하며 정이 많음. 쉽게 사람들과 어울리고, 긍정적이며 낙천적임.')/('특징':'말투는 생기 넘치고 친근하며, 귀여운 사투리를 자주 사용함. 말할 때 자주 웃고, 상황에 따라 과장된 말투를 사용해 상대방의 관심을 끔').";
+        const persona2Text =
+          "('나이':'70대 초반')/('성격':'따뜻하고 친절함, 배려심이 깊고 책임감이 강함, 열정적이고 적극적임')/('특징':'점잖고 차분한 말투, 꼼꼼하고 신중한 행동, 언제나 예의를 갖춤')";
+
+        persona0Button.addEventListener("click", function () {
+          personaInput.value = persona0Text;
+        });
+
+        persona1Button.addEventListener("click", function () {
+          personaInput.value = persona1Text;
+        });
+
+        persona2Button.addEventListener("click", function () {
+          personaInput.value = persona2Text;
+        });
+      });
+
+      function copyText(textareaId) {
+        var copyText = document.getElementById(textareaId);
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+        document.execCommand("copy");
+        var modal = document.getElementById("additionalTextBoxesModal");
+        modal.style.display = "none";
+      }
+
+      var modal = document.getElementById("additionalTextBoxesModal");
+      var closeModalButton = document.getElementById("closeModal");
+
+      closeModalButton.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      // 텍스트 파일을 불러오는 함수
+      function loadText(filePath, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", filePath, true);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            callback(xhr.responseText);
+          }
+        };
+        xhr.send();
+      }
+
+      var buttons = document.querySelectorAll(".additional-button");
+      var textarea = document.getElementById("textInput4");
+      var modalLabel = document.getElementById("modalLabel");
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var filePath =
+            "txt/" + button.innerText.toLowerCase().replace(/ /g, "_") + ".txt";
+          loadText(filePath, function (text) {
+            textarea.value = text;
+            modalLabel.innerText = button.innerText; // 버튼 이름을 label에 설정
+            modal.style.display = "block";
+          });
+        });
+      });
+    </script>
+    <script src="chat.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

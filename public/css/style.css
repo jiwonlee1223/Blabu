@@ -1,0 +1,825 @@
+#personaSettingButton:hover,
+#moduleButton:hover,
+#submitButton:hover,
+#processorButton:hover {
+  background-color: #9b9b9b;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 50px;
+  width: 100px;
+}
+
+.additional-persona {
+  background-color: #f5f5f5;
+  border: none;
+  color: rgb(51, 51, 51);
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.additional-button {
+  background-color: #f5f5f5;
+  border: none;
+  color: rgb(51, 51, 51);
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%; /* Could be more or less, depending on screen size */
+  max-width: 1000px; /* Maximum width */
+  
+  transform: translate(-0%, -25%); /* 자신의 크기 만큼 중앙으로 이동 */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.open-modal-button {
+  background-color: #3a3a3a;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+/* Text box container styling */
+.overlap-3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #ffffff;
+  margin-top: 10px;
+}
+
+.TB-rectangle-4 {
+  width: 100%;
+  height: 500px;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.text-box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.text-box-container label {
+  font-family: "NanumSquare Neo-Bold", Helvetica;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.copy-button {
+  background-color: #3a3a3a;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 12px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+
+.thick-border {
+  border-width: 4px !important;
+  color: #FFB380 !important;
+}
+
+.hidden-audio {
+  display: none;
+}
+
+.text-container {
+  position: relative;
+  display: inline-block;
+  position: absolute;
+  width: 387px;
+  height: 395px;
+  top: 0;
+  left: 175px;
+}
+
+.play-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #3a3a3a; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.hidden-audio {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+#personaInput {
+  font-family: "NanumSquare Neo-Bold", Helvetica;
+  color: #000000;
+  font-size: 18px;
+  width: 100%;
+  height: 200px;
+  margin: 10px 0px 0px;
+  padding: 20px;
+  border: 2px solid;
+}
+
+#personaInstruction {
+  font-family: "NanumSquare Neo-Bold", Helvetica;
+  color: #000000;
+  font-weight: 500;
+  text-align: center;
+  font-size: 18px;
+}
+
+#personaSubmit {
+  font-family: "NanumSquare Neo-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  padding: 20px;
+  width: 100%;
+}
+
+.desktop {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.desktop .div {
+  background-color: #ffffff;
+  width: 1440px;
+  height: 905px;
+  position: relative;
+}
+
+.desktop .pipeline {
+  position: absolute;
+  width: 895px;
+  height: 411px;
+  top: 0;
+  left: 272px;
+}
+
+.desktop .overlap-group {
+  position: relative;
+  height: 352px;
+  top: 43px;
+}
+
+.desktop .line {
+  position: absolute;
+  width: 254px;
+  height: 75px;
+  top: 199px;
+  left: 411px;
+}
+
+.desktop .img {
+  position: absolute;
+  width: 65px;
+  height: 2px;
+  top: 182px;
+  left: 772px;
+}
+
+.desktop .line-2 {
+  position: absolute;
+  width: 152px;
+  height: 39px;
+  top: 272px;
+  left: 124px;
+}
+
+.desktop .line-3 {
+  position: absolute;
+  width: 152px;
+  height: 39px;
+  top: 235px;
+  left: 124px;
+}
+
+.desktop .line-4 {
+  position: absolute;
+  width: 540px;
+  height: 65px;
+  top: 120px;
+  left: 124px;
+}
+
+.desktop .line-5 {
+  position: absolute;
+  width: 543px;
+  height: 122px;
+  top: 47px;
+  left: 125px;
+}
+
+.desktop .processor-button {
+  position: absolute;
+  width: 133px;
+  height: 59px;
+  top: 242px;
+  left: 277px;
+  background-color: #fbe5d6;
+  border: 2px solid;
+  border-color: #000000;
+}
+
+.desktop .processor {
+  position: absolute;
+  top: 18px;
+  left: 19px;
+  font-family: "NanumSquare Neo-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .user {
+  position: absolute;
+  width: 51px;
+  height: 66px;
+  top: 151px;
+  left: 844px;
+}
+
+.desktop .internalData {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: absolute;
+  top: 191px;
+  left: 0;
+}
+
+.desktop .dataimg {
+  position: relative;
+  width: 122px;
+  height: 78px;
+  object-fit: cover;
+}
+
+.desktop .text-wrapper {
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  font-family: "NanumSquare Neo-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 19.8px;
+}
+
+.desktop .manualInformation {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.desktop .text-wrapper-2 {
+  position: absolute;
+  top: 26px;
+  left: 8px;
+  font-family: "NanumSquare Neo-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 19.8px;
+}
+
+.desktop .externalData {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: absolute;
+  top: 274px;
+  left: 0;
+}
+
+.desktop .external-data-2 {
+  position: absolute;
+  top: 27px;
+  left: 23px;
+  font-family: "NanumSquare Neo-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 19.8px;
+}
+
+.desktop .domainInformation {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: absolute;
+  top: 83px;
+  left: 0;
+}
+
+.desktop .ellipse {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 229px;
+  left: 118px;
+  background-color: #000000;
+  border-radius: 5px;
+}
+
+.desktop .ellipse-2 {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 42px;
+  left: 118px;
+  background-color: #000000;
+  border-radius: 5px;
+}
+
+.desktop .ellipse-3 {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 304px;
+  left: 118px;
+  background-color: #000000;
+  border-radius: 5px;
+}
+
+.desktop .ellipse-4 {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 117px;
+  left: 118px;
+  background-color: #000000;
+  border-radius: 5px;
+}
+
+.desktop .module-button {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  position: absolute;
+  top: 127px;
+  left: 663px;
+}
+
+.desktop .ellipse-5 {
+  position: relative;
+  width: 113px;
+  height: 113px;
+  background-color: #e2f0d9;
+  border-radius: 56.5px;
+  border: 2px solid;
+  border-color: #000000;
+}
+
+.desktop .LLM-module {
+  position: absolute;
+  top: 36px;
+  left: 22px;
+  font-family: "NanumSquare Neo-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .ellipse-6 {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 266px;
+  left: 271px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 2px solid;
+  border-color: #000000;
+}
+
+.desktop .ellipse-7 {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 266px;
+  left: 404px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 2px solid;
+  border-color: #000000;
+}
+
+.desktop .arrow {
+  position: absolute;
+  width: 11px;
+  height: 13px;
+  top: 177px;
+  left: 836px;
+}
+
+.desktop .ellipse-8 {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 163px;
+  left: 659px;
+  background-color: #000000;
+  border-radius: 5px;
+}
+
+.desktop .ellipse-9 {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 178px;
+  left: 658px;
+  background-color: #000000;
+  border-radius: 5px;
+}
+
+.desktop .ellipse-10 {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 177px;
+  left: 770px;
+  background-color: #000000;
+  border-radius: 5px;
+}
+
+.desktop .ellipse-11 {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 194px;
+  left: 661px;
+  background-color: #000000;
+  border-radius: 5px;
+}
+
+.desktop .line-6 {
+  position: absolute;
+  width: 2px;
+  height: 22px;
+  top: 106px;
+  left: 719px;
+}
+
+.desktop .arrow-2 {
+  position: absolute;
+  width: 14px;
+  height: 11px;
+  top: 122px;
+  left: 713px;
+}
+
+.desktop .persona-setting-wrapper {
+  position: absolute;
+  width: 110px;
+  height: 66px;
+  top: 41px;
+  left: 665px;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid;
+  border-color: #000000;
+}
+
+.desktop .persona-setting {
+  position: absolute;
+  top: 11px;
+  left: 17px;
+  font-family: "NanumSquare Neo-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .overlap {
+  position: absolute;
+  width: 562px;
+  height: 395px;
+  top: 443px;
+  left: 780px;
+}
+
+#responseText {
+  position: absolute;
+  width: 387px;
+  height: 395px;
+  top: 0;
+  left: 175px;
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #000000;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.desktop .TB-line {
+  position: absolute;
+  width: 176px;
+  height: 2px;
+  top: 196px;
+  left: 0;
+}
+
+.desktop .TB-ellipse-black {
+  background-color: #000000;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 188px;
+  left: 168px;
+  border-radius: 9px;
+}
+
+.desktop .TB-ellipse-white {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #000000;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 188px;
+  left: 168px;
+  border-radius: 9px;
+}
+
+.desktop .TB-polygon {
+  position: absolute;
+  width: 14px;
+  height: 16px;
+  top: 188px;
+  left: 170px;
+}
+
+.desktop .overlap-2 {
+  position: absolute;
+  width: 683px;
+  height: 395px;
+  top: 443px;
+  left: 97px;
+}
+
+#textInput3 {
+  position: absolute;
+  width: 387px;
+  height: 121px;
+  top: 274px;
+  left: 0;
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #000000;
+  padding: 20px;
+  font-size: 18px;
+}
+
+#textInput2 {
+  position: absolute;
+  width: 387px;
+  height: 121px;
+  top: 137px;
+  left: 0;
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #000000;
+  padding: 20px;
+  font-size: 18px;
+}
+
+#textInput1 {
+  position: absolute;
+  width: 387px;
+  height: 121px;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #000000;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.desktop .TB-line-2 {
+  position: absolute;
+  width: 176px;
+  height: 139px;
+  top: 196px;
+  left: 386px;
+}
+
+.desktop .TB-line-3 {
+  position: absolute;
+  width: 87px;
+  height: 2px;
+  top: 196px;
+  left: 387px;
+}
+
+.desktop .TB-line-4 {
+  position: absolute;
+  width: 176px;
+  height: 139px;
+  top: 58px;
+  left: 386px;
+}
+
+.desktop .submit-button {
+  position: absolute;
+  width: 121px;
+  height: 121px;
+  top: 137px;
+  left: 562px;
+  background-color: #3e3e3e;
+  border-radius: 60.48px;
+}
+
+.desktop .button-polygon {
+  position: absolute;
+  width: 45px;
+  height: 52px;
+  top: 34px;
+  left: 46px;
+}
+
+.desktop .TB-ellipse {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 326px;
+  left: 378px;
+  background-color: #000000;
+  border-radius: 9px;
+}
+
+.desktop .TB-ellipse-2 {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 188px;
+  left: 378px;
+  background-color: #000000;
+  border-radius: 9px;
+}
+
+.desktop .TB-ellipse-3 {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 51px;
+  left: 378px;
+  background-color: #000000;
+  border-radius: 9px;
+}
+
+/* 모달 스타일링 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; /* 원하는 너비 값으로 변경 */
+  max-width: 600px; /* 최대 너비를 설정하여 반응형 디자인 유지 */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-textarea {
+  width: 100%;
+  height: 100px;
+}
+
+.modal-submit {
+  margin-top: 10px;
+  padding: 10px;
+}
