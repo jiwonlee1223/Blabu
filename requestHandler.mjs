@@ -4,6 +4,10 @@ import { convertTextToTTS } from "./tts.mjs";
 
 const apiKey = "your-api-key";
 
+const openai = new OpenAI({
+  apiKey: apiKey,
+});
+
 const convertObjectToString = (jsonObject) => {
   const convert = (obj) => {
     return Object.entries(obj)
